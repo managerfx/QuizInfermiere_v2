@@ -1,5 +1,7 @@
 ﻿using Xamarin.Forms;
 
+
+// prova di commits
 namespace QuizInfermiere
 {
 	public partial class App : Application
@@ -27,4 +29,3 @@ namespace QuizInfermiere
 		}
 	}
 }
-
