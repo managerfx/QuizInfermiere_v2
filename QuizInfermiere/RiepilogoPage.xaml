@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="QuizInfermiere.RiepilogoPage">
+	<ContentPage.Content>
+	<ScrollView>
+	<StackLayout Padding="10" Spacing="15">
+	<StackLayout></StackLayout>
+	<StackLayout Orientation="Horizontal" BackgroundColor="Silver">
+	<Button x:Name="Home" Text="Home"></Button>		
+	<Label Text="QUIZ INFERMIERE" Font="20" HorizontalOptions = "EndAndExpand" VerticalOptions="Center" FontAttributes="Bold"></Label>
+	</StackLayout> 
+	<Label x:Name="Categoria" Text="" Font="18"  HorizontalOptions = "Center" VerticalOptions="CenterAndExpand" FontAttributes="Bold"></Label>
+	<Label Text="Test completato" Font="15"  HorizontalOptions = "Start" VerticalOptions="Start"></Label>
+	<Label x:Name="esatteLabel" Text="" Font="15"  HorizontalOptions = "Start" VerticalOptions="Start" TextColor="Green"></Label>
+	<Label x:Name="errateLabel" Text="" Font="15"  HorizontalOptions = "Start" VerticalOptions="Start" TextColor="Red"></Label>
+	<Label Text="Dettaglio risposte" Font="18"  HorizontalOptions = "Center" VerticalOptions="Center" TextColor="Black"></Label>
+	
+				<ListView x:Name="RisposteList" ItemSelected="RiepilogoClick" ></ListView>
+	<Label Text="Fine" Font="10" HorizontalOptions = "Center" VerticalOptions="CenterAndExpand"></Label>
+	</StackLayout>
+	</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

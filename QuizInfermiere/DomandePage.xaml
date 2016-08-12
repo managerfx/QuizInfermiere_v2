@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="QuizInfermiere.DomandePage">
+	<ContentPage.Content>
+			<ScrollView>
+	<StackLayout Padding="10" Spacing="10" BackgroundColor="Silver" >
+				
+	<StackLayout>
+
+				</StackLayout>
+				
+				<StackLayout Orientation="Horizontal" BackgroundColor="Gray">
+			
+					
+					<Button x:Name="Home" TextColor="Lime" Text="Home"></Button>
+			
+			<Label Text="QUIZ INFERMIERE" TextColor="White" Font="20" HorizontalOptions = "EndAndExpand" VerticalOptions="Center" FontAttributes="Bold"></Label>
+	
+			</StackLayout> 
+				<Label x:Name="Titolo" TextColor="White" Text="Categorie" Font="20" HorizontalOptions = "Center" VerticalOptions="Center" FontAttributes="Bold"></Label>
+	
+	<Label x:Name="NumeroQuiz" TextColor="White" Text="" Font="20"  HorizontalOptions = "Center" VerticalOptions="CenterAndExpand"></Label>
+<Label x:Name="NumeroDomanda" TextColor="White" Text="" Font="20"  HorizontalOptions = "Start" VerticalOptions="StartAndExpand"></Label>
+
+				<Label x:Name="Domanda" TextColor="White" Text="" Font="18"  HorizontalOptions = "Start" VerticalOptions="StartAndExpand" ></Label>
+				<StackLayout Orientation ="Horizontal">
+
+				<Image Source="A" ></Image><Label TextColor="White" x:Name="RispostaUnoLabel" Text="Fine" Font="13" HorizontalOptions = "Center" VerticalOptions="CenterAndExpand"></Label>
+				</StackLayout>
+				<StackLayout Orientation ="Horizontal">
+					<Image Source="B"  ></Image><Label TextColor="White" x:Name="RispostaDueLabel" Text="Fine" Font="13" HorizontalOptions = "Center" VerticalOptions="CenterAndExpand"></Label>
+					</StackLayout>
+					<StackLayout Orientation ="Horizontal">
+					<Image Source="C"  ></Image><Label TextColor="White" x:Name="RispostaTreLabel" Text="Fine" Font="13" HorizontalOptions = "Center" VerticalOptions="CenterAndExpand"></Label>
+					</StackLayout>
+					<StackLayout Orientation ="Horizontal">
+				<Image Source="D"></Image><Label TextColor="White" x:Name="RispostaQuattroLabel" Text="Fine" Font="13" HorizontalOptions = "Center" VerticalOptions="CenterAndExpand"></Label>
+</StackLayout>
+				
+				<Label Text="Copyright QuizInfermiere 2016" Font="10" HorizontalOptions = "Center" VerticalOptions="CenterAndExpand"></Label>
+		</StackLayout>
+			
+			</ScrollView>
+	</ContentPage.Content>
+</ContentPage>
+
+
+	
+
+
+
+		<!--<StackLayout Padding="15" Spacing="10">
+	<Label x:Name="Titolo" Text="" Font="24"  HorizontalOptions = "Center" VerticalOptions="CenterAndExpand" FontAttributes="Bold"></Label>
+		</StackLayout>
+			<StackLayout>
+			<Label x:Name="NumeroQuiz" Text="" Font="18"  HorizontalOptions = "Center" VerticalOptions="CenterAndExpand" FontAttributes="Bold"></Label>
+				<Label x:Name="Domanda" Text="" Font="18"  HorizontalOptions = "Center" VerticalOptions="CenterAndExpand" FontAttributes="Bold"></Label>
+			</StackLayout>
+			<StackLayout>
+			<ListView x:Name="RisposteList"></ListView>
+			</StackLayout>-->
