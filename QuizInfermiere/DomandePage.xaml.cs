@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Facebook;
 
 using Xamarin.Forms;
 
@@ -11,8 +10,7 @@ namespace QuizInfermiere
 		
 		int domandaVisualizzare;//numero della domanda da visualizzare nella count;
 		List<Domanda> dieciDomande;
-		string userToken;
-
+	
 		public DomandePage(object detail, int domanda, bool primapagina, List<Domanda> domande)
 		{
 			InitializeComponent();
@@ -30,10 +28,10 @@ namespace QuizInfermiere
 				categoriaID = Convert.ToInt32(detail);
 
 			}
-			else if (detail is Categorie)
+			else if (detail is Ana_Categorie)
 			{
-				categoriaID = (detail as Categorie).IdCategoria;
-				Titolo.Text = (detail as Categorie).Categoria;
+				categoriaID = (detail as Ana_Categorie).IdCategoria;
+				Titolo.Text = (detail as Ana_Categorie).Categoria;
 			}
 			if (primapagina)
 			{

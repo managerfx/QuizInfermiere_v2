@@ -12,7 +12,7 @@ namespace QuizInfermiere.iOS
 		private ISQLitePlatform piattaforma;
 
 
-		public string DirectoryDB
+		public string PersonalFolder
 		{
 			get
 			{

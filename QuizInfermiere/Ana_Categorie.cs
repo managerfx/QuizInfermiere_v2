@@ -3,7 +3,7 @@ using SQLite.Net.Attributes;
 
 namespace QuizInfermiere
 {
-	public class Categorie
+	public class Ana_Categorie
 	{
 		[PrimaryKey, AutoIncrement]
 		public int IdCategoria {get; set;}
