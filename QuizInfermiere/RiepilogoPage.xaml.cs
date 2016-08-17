@@ -18,7 +18,7 @@ namespace QuizInfermiere
 			{
 				var riepilogo = dati.GetRiepilogo();
 				var categoria = dati.GetByID(riepilogo[0].IdCategoria);
-				Categoria.Text = categoria.Categoria;
+				Categoria.Text = categoria.DES_CATEGORIA;
 				int esatte = 0;
 				int errate = 0;
 

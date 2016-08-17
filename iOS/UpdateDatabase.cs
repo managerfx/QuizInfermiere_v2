@@ -22,20 +22,25 @@ namespace QuizInfermiere.iOS
 			var config = new Config();
 			var url = new Uri("http://www.managerfx.altervista.org/Ftp/InfermieriDataBase.db"); // Html repo DB
 
-			var webClient = new WebClient();
+			string documentsPath = config.PersonalFolder;
+			string localFilename = "InfermieriDataBase.db";
+			var fileNameAndPath = Path.Combine(documentsPath, localFilename);
 
-			webClient.DownloadStringCompleted += (s, e) =>
+
+
+			if (!File.Exists(documentsPath))
 			{
-				var text = e.Result; // get the downloaded text
-				string documentsPath = config.PersonalFolder;
-				string localFilename = "InfermieriDataBase.db";
-				string localPath = Path.Combine(documentsPath, localFilename);
-				File.WriteAllText(localPath, text); // writes to local storage
-			};
-		//	webClient.DownloadFile(urlRemoteDB, Path.Combine(localPathDB, "InfermieriDataBase.db"));
-			webClient.Encoding = Encoding.UTF8;
+				Directory.CreateDirectory(documentsPath);
+			}
 
-			webClient.DownloadStringAsync(url);
+
+			var webClient = new WebClient();
+			webClient.DownloadFile(url, fileNameAndPath);
+
+			if (File.Exists(fileNameAndPath))
+			{
+				var a = "ok";
+			}
 
 			return true;
 		}

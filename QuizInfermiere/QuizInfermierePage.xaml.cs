@@ -87,8 +87,8 @@ namespace QuizInfermiere
 
 
 
-				var categorieDB = dati.GetAllCategorie();
-				var domandeDB = dati.GetAllDomanda();
+				//var categorieDB = dati.GetAllCategorie();
+				//var domandeDB = dati.GetAllDomanda();
 
 
 

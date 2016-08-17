@@ -28,10 +28,10 @@ namespace QuizInfermiere
 				categoriaID = Convert.ToInt32(detail);
 
 			}
-			else if (detail is Ana_Categorie)
+			else if (detail is ANA_CATEGORIA)
 			{
-				categoriaID = (detail as Ana_Categorie).IdCategoria;
-				Titolo.Text = (detail as Ana_Categorie).Categoria;
+				categoriaID = (detail as ANA_CATEGORIA).ID_CATEGORIA;
+				Titolo.Text = (detail as ANA_CATEGORIA).DES_CATEGORIA;
 			}
 			if (primapagina)
 			{
