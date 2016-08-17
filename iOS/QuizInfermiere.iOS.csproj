@@ -134,6 +134,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Config.cs" />
+    <Compile Include="UpdateDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\A.png" />

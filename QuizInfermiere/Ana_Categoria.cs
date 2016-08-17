@@ -3,15 +3,15 @@ using SQLite.Net.Attributes;
 
 namespace QuizInfermiere
 {
-	public class Categorie
+	public class ANA_CATEGORIA
 	{
 		[PrimaryKey, AutoIncrement]
-		public int IdCategoria {get; set;}
-		public string Categoria { get; set; }
+		public int ID_CATEGORIA {get; set;}
+		public string DES_CATEGORIA { get; set; }
 
 		public override string ToString()
 		{
-			return string.Format("{0}", Categoria);
+			return string.Format("{0}", DES_CATEGORIA);
 		}
 
 	}
