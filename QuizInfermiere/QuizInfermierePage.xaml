@@ -1,4 +1,58 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Phoneword.MainPage" BackgroundColor="Green">-->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:QuizInfermiere" x:Class="QuizInfermiere.QuizInfermierePage" BackgroundColor="Green">
+	<ContentPage.Padding>
+		<OnPlatform x:TypeArguments="Thickness" iOS="0, 0, 0, 00" Android="20, 20, 20, 20" WinPhone="20, 20, 20, 20" />
+	</ContentPage.Padding>
+	<ContentPage.Content>
+		<ScrollView>
+			<Grid RowSpacing="5" ColumnSpacing="5" Padding="10, 10, 10, 10" BackgroundColor="Green">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="8*" />
+					<RowDefinition Height="5*" />
+					<RowDefinition Height="3*" />
+					<RowDefinition Height="3*" />
+					<RowDefinition Height="3*" />
+					<RowDefinition Height="3*" />
+					<RowDefinition Height="1*" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="1*" />
+					<ColumnDefinition Width="1*" />
+					<ColumnDefinition Width="1*" />
+				</Grid.ColumnDefinitions>
+				<StackLayout Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HeightRequest = "1">
+					<ListView x:Name="Listview" ItemSelected="OnItemSelected" />
+				</StackLayout>
+				<Label Text="News" TextColor="Black" BackgroundColor="White" XAlign="Center" YAlign="Center" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" />
+				<!--
+				<StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Vertical" Grid.Row="1" Grid.ColumnSpan="3" BackgroundColor="Blue">
+					<Label Text="Enter a Number:" />
+					<Entry x:Name="phoneNumberText" Text="1-855-XAMARIN" />
+					<Button x:Name="translateButon" Text="Translate" Clicked="OnTranslate" />
+					<Button x:Name="callButton" Text="Call" IsEnabled="false" Clicked="OnCall" />
+				</StackLayout>
+
+				-->
+				<Label Text="Span two rows (or more if you want)" TextColor="Yellow" BackgroundColor="Blue" XAlign="Center" YAlign="Center" Grid.Row="3" Grid.Column="2" />
+				<!--<Button x:iiName="translateButon2" Text="Logica2" BackgroundColor="Yellow" Clicked="OnTranslate" TextColor="Blue" Grid.Row="2" Grid.Column="0" BorderRadius="0" />
+				<Button x:Name="pg2" Text="Vai a Pagina 2" BackgroundColor="#FF8800" Clicked="ChangePage" TextColor="Blue" Grid.Row="2" Grid.Column="1" BorderRadius="0" />
+				--><!--<Label Text="Chimica" TextColor="Aqua" BackgroundColor="#FF8800" XAlign="Center" YAlign="Center" Grid.Row="2" Grid.Column="1" />
+				-->
+				<Label Text="Biologia" TextColor="Aqua" BackgroundColor="Purple" XAlign="Center" YAlign="Center" Grid.Row="2" Grid.Column="2" />
+				<Label Text="Matematica" TextColor="Yellow" BackgroundColor="Blue" XAlign="Center" YAlign="Center" Grid.Row="3" Grid.Column="0" />
+				<Label Text="Inglese" TextColor="Purple" BackgroundColor="Aqua" XAlign="Center" YAlign="Center" Grid.Row="3" Grid.Column="1" />
+				<Label Text="Grammatica" TextColor="Yellow" BackgroundColor="Blue" XAlign="Center" YAlign="Center" Grid.Row="3" Grid.Column="2" />
+				<Label Text="Biologia" TextColor="Aqua" BackgroundColor="Purple" XAlign="Center" YAlign="Center" Grid.Row="4" Grid.Column="0" />
+				<Label Text="Matematica" TextColor="Yellow" BackgroundColor="Blue" XAlign="Center" YAlign="Center" Grid.Row="4" Grid.Column="1" />
+				<Label Text="Inglese" TextColor="Purple" BackgroundColor="Aqua" XAlign="Center" YAlign="Center" Grid.Row="4" Grid.Column="2" />
+				<Label Text="I tuoi progressi" TextColor="Yellow" BackgroundColor="Green" XAlign="Center" YAlign="Center" Grid.Row="5" Grid.ColumnSpan="3" />
+				<Label Text="Footer - News - Versione" TextColor="Black" BackgroundColor="White" XAlign="Center" YAlign="Center" Grid.Row="6" Grid.ColumnSpan="3" />
+			</Grid>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>
+<!--<?xml version="1.0" encoding="utf-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:QuizInfermiere" x:Class="QuizInfermiere.QuizInfermierePage">
 	<ContentPage.Content>
 	<ContentView>
@@ -13,3 +67,4 @@
 	</ContentView>
 </ContentPage.Content>
 </ContentPage>
+-->

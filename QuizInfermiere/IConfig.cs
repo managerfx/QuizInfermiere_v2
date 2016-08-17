@@ -4,6 +4,6 @@ using SQLite.Net.Interop;
 namespace QuizInfermiere
 {
 	public interface IConfig 	{
-		string DirectoryDB { get; } 		ISQLitePlatform Piattaforma { get; } 	} 
+		string PersonalFolder { get; } 		ISQLitePlatform Piattaforma { get; } 	} 
 }
 

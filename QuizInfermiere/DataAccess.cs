@@ -4,6 +4,9 @@ using System.IO;
 using System.Linq;
 using SQLite.Net;
 using Xamarin.Forms;
+using System.Net;
+
+
 
 namespace QuizInfermiere
 {
@@ -13,21 +16,28 @@ namespace QuizInfermiere
 
 		public DataAccess()
 		{
+			//http://www.managerfx.altervista.org/Ftp/InfermieriDataBase.db
+
+			var updateDatabaseCore = DependencyService.Get<IUpdateDatabase>();
 			var config = DependencyService.Get<IConfig>();
-			connection = new SQLiteConnection(config.Piattaforma,
-											  Path.Combine(config.DirectoryDB, "ProvaDB.db3"));
-			connection.CreateTable<Categorie>();
-			connection.CreateTable<Domanda>();
-			connection.CreateTable<RiepilogoRisposte>();
+			updateDatabaseCore.UpdateData();
+
+			connection = new SQLiteConnection(config.Piattaforma, Path.Combine(config.PersonalFolder, "InfermieriDataBase_.db"));
+
+
+			
+			connection.CreateTable<ANA_CATEGORIA>();
+			//connection.CreateTable<Domanda>();
+			//connection.CreateTable<RiepilogoRisposte>();
 		}
 
 		#region Categoria
-		public void InsertCategoria(Categorie categoria)
+		public void InsertCategoria(ANA_CATEGORIA categoria)
 		{
 			connection.Insert(categoria);
 		}
 
-		public void InsertListCategorie(List<Categorie> lista)
+		public void InsertListCategorie(List<ANA_CATEGORIA> lista)
 		{
 			foreach (var categoria in lista)
 			{
@@ -36,24 +46,27 @@ namespace QuizInfermiere
 
 		}
 
-		public void UpdateCategoria(Categorie categoria)
+		public void UpdateCategoria(ANA_CATEGORIA categoria)
 		{
 			connection.Update(categoria);
 		}
 
-		public void DeleteCategoria(Categorie categoria)
+		public void DeleteCategoria(ANA_CATEGORIA categoria)
 		{
 			connection.Delete(categoria);
 		}
 
-		public Categorie GetByID(int IdCategoria)
+		public ANA_CATEGORIA GetByID(int IdCategoria)
 		{
-			return connection.Table<Categorie>().FirstOrDefault(f => f.IdCategoria == IdCategoria);
+			return connection.Table<ANA_CATEGORIA>().FirstOrDefault(f => f.ID_CATEGORIA == IdCategoria);
 		}
 
-		public List<Categorie> GetAll()
+		public List<ANA_CATEGORIA> GetAllCategorie()
 		{
-			return connection.Table<Categorie>().OrderBy(c => c.IdCategoria).ToList();
+			
+
+			return connection.Table<ANA_CATEGORIA>().OrderBy(c => c.ID_CATEGORIA).ToList();
+
 		}
 
 		#endregion
