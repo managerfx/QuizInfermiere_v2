@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿using QuizInfermiere.Contracts;
+using QuizInfermiere.Repository;
+using System;
 using Xamarin.Forms;
 
 namespace QuizInfermiere
 {
-	public partial class RiepilogoDomandaPage : ContentPage
+    public partial class RiepilogoDomandaPage : ContentPage
 	{
 		public RiepilogoDomandaPage(object detail)
 		{

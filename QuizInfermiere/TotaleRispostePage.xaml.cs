@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-
+﻿using QuizInfermiere.Repository;
+using System;
 using Xamarin.Forms;
 
 namespace QuizInfermiere
@@ -45,14 +44,7 @@ namespace QuizInfermiere
 				{
 					PercentualeLabel.Text = "Continua ad esercitarti, hai totalizzato il " + percentComplete.ToString() + "%.";
 				}
-
-
-
-
-
 			}
-
-
 		}
 
 		async void home_clicked(object sender, EventArgs e)
