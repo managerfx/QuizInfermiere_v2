@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using QuizInfermiere.Repository;
+using System;
 
 using Xamarin.Forms;
 
@@ -18,7 +18,7 @@ namespace QuizInfermiere
 			{
 				var riepilogo = dati.GetRiepilogo();
 				var categoria = dati.GetByID(riepilogo[0].IdCategoria);
-				Categoria.Text = categoria.DES_CATEGORIA;
+				Categoria.Text = categoria.DesCategoria;
 				int esatte = 0;
 				int errate = 0;
 

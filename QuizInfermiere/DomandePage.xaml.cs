@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuizInfermiere.Contracts;
+using QuizInfermiere.Repository;
+using System;
 using System.Collections.Generic;
 
 using Xamarin.Forms;
@@ -14,10 +16,6 @@ namespace QuizInfermiere
 		public DomandePage(object detail, int domanda, bool primapagina, List<Domanda> domande)
 		{
 			InitializeComponent();
-
-
-
-
 			dieciDomande = domande;
 			domandaVisualizzare = domanda;
 
@@ -28,10 +26,10 @@ namespace QuizInfermiere
 				categoriaID = Convert.ToInt32(detail);
 
 			}
-			else if (detail is ANA_CATEGORIA)
+			else if (detail is AnaCategoria)
 			{
-				categoriaID = (detail as ANA_CATEGORIA).ID_CATEGORIA;
-				Titolo.Text = (detail as ANA_CATEGORIA).DES_CATEGORIA;
+				categoriaID = (detail as AnaCategoria).IdCategoria;
+				Titolo.Text = (detail as AnaCategoria).DesCategoria;
 			}
 			if (primapagina)
 			{
@@ -68,7 +66,7 @@ namespace QuizInfermiere
 			RispostaQuattroLabel.GestureRecognizers.Add(new TapGestureRecognizer((view) => RispostaClick(RispostaQuattroLabel.Text)));
 
 
-			RiepilogoRisposte risposta = new RiepilogoRisposte();
+            RiepilogoRisposte risposta = new RiepilogoRisposte();
 			risposta.IdCategoria = categoriaID;
 			risposta.NumeroDomanda = dieciDomande[domanda - 1].NumeroDomanda;
 			risposta.Question = dieciDomande[domanda - 1].Question;
