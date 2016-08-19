@@ -1,6 +1,6 @@
-﻿using System;
-using SQLite.Net.Interop;
+﻿using SQLite.Net.Interop;
 using Xamarin.Forms;
+using QuizInfermiere.Configuration;
 
 [assembly: Dependency(typeof(QuizInfermiere.Droid.Config))]
 

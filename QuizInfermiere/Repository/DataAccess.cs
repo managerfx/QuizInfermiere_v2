@@ -17,11 +17,27 @@ namespace QuizInfermiere.Repository
         public DataAccess()
         {
             var updateDatabaseCore = DependencyService.Get<IUpdateDatabase>();
+            //var contentAccess = DependencyService.Get<IContentProvider>();
             //var logger = DependencyService.Get<ILogger>();
             var config = DependencyService.Get<IConfig>();
-            updateDatabaseCore.UpdateData(ParametriConfigurazione.UrlDB, ParametriConfigurazione.NomeDB, config.PersonalFolder);
+            var dbAggiornato = updateDatabaseCore.UpdateData(ParametriConfigurazione.UrlDB, ParametriConfigurazione.NomeDB, config.PersonalFolder);
 
-            connection = new SQLiteConnection(config.Piattaforma, Path.Combine(config.PersonalFolder, ParametriConfigurazione.NomeDB));
+
+          //  ContentProviderImplementation cpi = new ContentProviderImplementation();
+
+            TestPCLContent tpc = new TestPCLContent();
+//            tpc.ContentProvider = contentAccess; //injection
+
+            string content = tpc.GetCompletePathDB(); //loading
+
+
+
+            if (dbAggiornato)
+                connection = new SQLiteConnection(config.Piattaforma, Path.Combine(config.PersonalFolder, ParametriConfigurazione.NomeDB));
+            else
+            {
+                connection = new SQLiteConnection(config.Piattaforma, content);
+            }
             //logger.LogInfo("DB ok");
         }
 

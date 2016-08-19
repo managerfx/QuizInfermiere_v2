@@ -13,23 +13,30 @@ namespace QuizInfermiere.iOS
 	{
 		public bool UpdateData(string urlDb, string nomeDb, string personalFolder)
         {
-			var url = new Uri(urlDb); 
+            bool esito = true;
+
+            var url = new Uri(urlDb); 
 			var cartellaOutputDB = Path.Combine(personalFolder, nomeDb);
 
 			if (!File.Exists(personalFolder))
-			{
 				Directory.CreateDirectory(personalFolder);
-			}
 
-            var webClient = new WebClient();
-			webClient.DownloadFile(url, cartellaOutputDB);
-
+            try
+            {
+                var webClient = new WebClient();
+                webClient.DownloadFile(url, cartellaOutputDB);
+            }
+            catch (Exception)
+            {
+                esito = false;
+            }
+            
 			if (!File.Exists(cartellaOutputDB))
-			{
-                throw new ApplicationException("Database non scaricato");
+            {
+                //db non scaricato
             }
 
-			return true;
+			return esito;
 		}
 
 	}
