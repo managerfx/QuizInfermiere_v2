@@ -1,15 +1,12 @@
 ﻿using Xamarin.Forms;
 
 
-// prova di commits
 namespace QuizInfermiere
 {
 	public partial class App : Application
 	{
 		public App()
 		{
-			InitializeComponent();
-
 			MainPage = new QuizInfermierePage();
 		}
 
